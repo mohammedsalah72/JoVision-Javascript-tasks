@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+</head>
+<body>
+
+    
+    <button id="Button1">Button one</button>
+    <button id="Button2">Button two</button>
+    <button id="Button3">Button three</button>
+    <button id="Button4">Button four</button>
+    <button id="Button5">Button five</button>
+   
+    <script>
+        
+        const button = document.getElementById("Button1");
+
+        
+        button.addEventListener("click", function() {
+        
+            const numbers = [];
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+            }
+            const divisible = [];
+            for (let i = 0; i <= 100; i++) {
+                if (i%3==0){
+                    divisible.push(i);
+                }
+            }
+            
+            
+            
+            
+            console.log(`the array= ${numbers} \n`);
+            console.log(`the divisible array= ${divisible} \n`);
+        });
+              
+            const button2 = document.getElementById("Button2");
+        
+            button2.addEventListener("click", function() {
+                
+            const numbers = [];
+            for (let i = 0; i <= 100; i++) {
+                numbers.push(i);
+            }
+            const addnumbers = [];
+            for (let i = 100; i <= 150; i++) {
+                addnumbers.push(i);
+            }
+           numbers.push(addnumbers);
+            
+            
+             
+            console.log(`the actual array= ${numbers} \n`);
+            console.log(`the array add= ${addnumbers} \n`);
+        });
+
+        const Button3 = document.getElementById("Button3");
+        
+        Button3.addEventListener("click", function() {
+            
+        const numbers = [];
+        for (let i = 0; i <= 100; i++) {
+            numbers.push(i);
+        }
+        const newarray = [];
+        for (let i = 0; i <= 100; i++) {
+            newarray.push(i+3);
+        }
+       
+        
+        console.log(`the actual array= ${numbers} \n`);
+        console.log(`the new array= ${newarray} \n`);
+    });
+
+    const Button4 = document.getElementById("Button4");
+    
+    Button4.addEventListener("click", function() {
+        
+    const numbers = [];
+    for (let i = 0; i <= 100; i++) {
+        numbers.push(i);
+    }
+    
+    const subset = numbers.slice(20,41)
+    
+    console.log(`the actual array= ${numbers} \n`);
+    console.log(`the new array= ${subset} \n`);
+});
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+const Button5 = document.getElementById("Button5");
+    
+    Button5.addEventListener("click", function() {
+        
+    const numbers = [];
+    for (let i = 0; i <= 100; i++) {
+        numbers.push(i);
+    }
+    console.log(`the actual array= ${numbers} \n`);
+    const thesetShuffled =[];
+    for (let i = 0; i <= 100; i++) {
+        thesetShuffled.push(i);
+    }
+    shuffleArray(thesetShuffled);
+    console.log(`the shuffle array= ${thesetShuffled} \n`);
+    const x = thesetShuffled.sort(function(a, b){return a - b});
+    const q = x.reverse();
+    
+    console.log(`the reverse array= ${q} \n`);
+});
+    </script>
+
+</body>
+</html>
