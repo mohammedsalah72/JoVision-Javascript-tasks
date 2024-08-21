@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task11</title>
+    <style>
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: black ;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>Get Your IP Address </h2>
+    <button id="get-ip">Get IP</button>
+    
+    <script>
+        document.getElementById("get-ip").addEventListener("click", function() {
+            const button = this;
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())                
+                .then(data => {
+                    button.textContent = data.ip;
+                })
+                .catch(error => {
+                   
+                    alert("Error IP: " + error.message);
+                });
+        });
+    </script>
+</body>
+</html>
