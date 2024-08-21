@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAsk10</title>
+</head>
+<body>
+    <h2>Get Your IP Address</h2>
+    <button id="get-ip">Get IP</button>
+
+    <script>
+        document.getElementById("get-ip").addEventListener("click", function() {
+            const button = this;
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    
+                    button.textContent = data.ip;
+                })
+        });
+    </script>
+</body>
+</html>
